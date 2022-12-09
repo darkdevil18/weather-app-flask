@@ -1,2 +1,2 @@
 # weather-app-flask
-## A weeather app make using flask
+## A weather app make using flask
