@@ -2,10 +2,15 @@ import os
 import requests
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
+from flask_seasurf import SeaSurf
+from flask_talisman import Talisman
 
 load_dotenv()
 
 app = Flask(__name__)
+
+SeaSurf(app)
+Talisman(app)
 
 api_url = os.environ['api_url']
 
