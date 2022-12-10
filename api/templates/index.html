@@ -11,7 +11,7 @@ Weather App
 {% block result %}
 <section class="continer-md vstack mt-5 text-center">
     {% if not data.error %}
-    <h1 className="text-light text-center">{{data.location.name}}</h1>
+    <h1 className="text-light text-center" style="letter-spacing: 4px;">{{data.location.name}}</h1>
     <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
         <div class="card" style="width: 18rem;text-align: left;">
             <div class="card-header text-center text-bold">Today</div>
