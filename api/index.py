@@ -11,7 +11,7 @@ api_host = os.environ['api_host']
 
 
 def two_day_forecast(city: str):
-
+    
     querystring = {"q": city, "days": "2"}
 
     headers = {
