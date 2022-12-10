@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %} Weather App {% endblock %}
+{% block title %}
+{% if not data.error %}
+{{ data.location.name }} - Weather Report
+{% else %}
+Weather App
+{% endif %}
+{% endblock %}
 
 {% block result %}
     <section class="continer-md vstack mt-5 text-center">
