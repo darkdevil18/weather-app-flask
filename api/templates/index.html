@@ -9,37 +9,37 @@ Weather App
 {% endblock %}
 
 {% block result %}
-    <section class="continer-md vstack mt-5 text-center">
-        {% if not data.error %}
-        <h1 className="text-light text-center">{{data.location.name}}</h1>
-        <div class="d-flex justify-content-center g-5">
-            <div class="card me-5" style="width: 18rem;text-align: left;">
-                <div class="card-header text-center text-bold">Today</div>
-                <div class="card-body v-stack">
-                    <h5>Condition: {{ data.forecast.forecastday[0].day.condition.text }}</h5>
-                    <h5>Max Temperature: {{ data.forecast.forecastday[0].day.maxtemp_c}}&#8451;</h5>
-                    <h5>Min Temperature: {{ data.forecast.forecastday[0].day.mintemp_c}}&#8451;</h5>
-                    <h5>Avg Temperature: {{ data.forecast.forecastday[0].day.avgtemp_c}}&#8451;</h5>
-                    <h5>Avg Visibility: {{ data.forecast.forecastday[0].day.avgvis_km}}Km</h5>
-                    <h5>Avg Humidity: {{ data.forecast.forecastday[0].day.avghumidity}}%</h5>
-                    <h5>Sunrise: {{ data.forecast.forecastday[0].astro.sunrise }}</h5>
-                    <h5>Sunset: {{ data.forecast.forecastday[0].astro.sunset }}</h5>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;text-align: left;">
-                <div class="card-header text-center text-bold">Tommorow</div>
-                <div class="card-body v-stack">
-                    <h5>Condition: {{ data.forecast.forecastday[1].day.condition.text }}</h5>
-                    <h5>Max Temperature: {{ data.forecast.forecastday[1].day.maxtemp_c}}&#8451;</h5>
-                    <h5>Min Temperature: {{ data.forecast.forecastday[1].day.mintemp_c}}&#8451;</h5>
-                    <h5>Avg Temperature: {{ data.forecast.forecastday[1].day.avgtemp_c}}&#8451;</h5>
-                    <h5>Avg Visibility: {{ data.forecast.forecastday[1].day.avgvis_km}}Km</h5>
-                    <h5>Avg Humidity: {{ data.forecast.forecastday[1].day.avghumidity}}%</h5>
-                    <h5>Sunrise: {{ data.forecast.forecastday[1].astro.sunrise }}</h5>
-                    <h5>Sunset: {{ data.forecast.forecastday[1].astro.sunset }}</h5>
-                </div>
+<section class="continer-md vstack mt-5 text-center">
+    {% if not data.error %}
+    <h1 className="text-light text-center">{{data.location.name}}</h1>
+    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+        <div class="card" style="width: 18rem;text-align: left;">
+            <div class="card-header text-center text-bold">Today</div>
+            <div class="card-body v-stack">
+                <h5>Condition: {{ data.forecast.forecastday[0].day.condition.text }}</h5>
+                <h5>Max Temperature: {{ data.forecast.forecastday[0].day.maxtemp_c}}&#8451;</h5>
+                <h5>Min Temperature: {{ data.forecast.forecastday[0].day.mintemp_c}}&#8451;</h5>
+                <h5>Avg Temperature: {{ data.forecast.forecastday[0].day.avgtemp_c}}&#8451;</h5>
+                <h5>Avg Visibility: {{ data.forecast.forecastday[0].day.avgvis_km}}Km</h5>
+                <h5>Avg Humidity: {{ data.forecast.forecastday[0].day.avghumidity}}%</h5>
+                <h5>Sunrise: {{ data.forecast.forecastday[0].astro.sunrise }}</h5>
+                <h5>Sunset: {{ data.forecast.forecastday[0].astro.sunset }}</h5>
             </div>
         </div>
-        {% endif %}
-    </section>
+        <div class="card" style="width: 18rem;text-align: left;">
+            <div class="card-header text-center text-bold">Tommorow</div>
+            <div class="card-body v-stack">
+                <h5>Condition: {{ data.forecast.forecastday[1].day.condition.text }}</h5>
+                <h5>Max Temperature: {{ data.forecast.forecastday[1].day.maxtemp_c}}&#8451;</h5>
+                <h5>Min Temperature: {{ data.forecast.forecastday[1].day.mintemp_c}}&#8451;</h5>
+                <h5>Avg Temperature: {{ data.forecast.forecastday[1].day.avgtemp_c}}&#8451;</h5>
+                <h5>Avg Visibility: {{ data.forecast.forecastday[1].day.avgvis_km}}Km</h5>
+                <h5>Avg Humidity: {{ data.forecast.forecastday[1].day.avghumidity}}%</h5>
+                <h5>Sunrise: {{ data.forecast.forecastday[1].astro.sunrise }}</h5>
+                <h5>Sunset: {{ data.forecast.forecastday[1].astro.sunset }}</h5>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</section>
 {% endblock %}

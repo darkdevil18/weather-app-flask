@@ -27,9 +27,9 @@
             <a class="navbar-brand text-light text-uppercase font-monospace h1 fw-4" href="{{ url_for('main') }}">Weather App</a>
         </div>
     </nav>
-    <section class="container-fluid mt-5 d-flex justify-content-center">
-        <form action="/" method="post" class="d-flex">
-            <input class="form-control-lg me-2" type="search" placeholder="City" aria-label="City" name="city" id="city">
+    <section class="container-fluid mt-5 d-flex flex-column flex-md-row justify-content-center">
+        <form action="/" method="post" class="d-flex flex-column flex-md-row gap-3">
+            <input class="form-control-lg w-100" type="search" placeholder="City" aria-label="City" name="city" id="city">
             <button class="btn btn-outline-primary" type="submit">Search</button>
           </form>
     </section>
