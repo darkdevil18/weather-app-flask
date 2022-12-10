@@ -9,8 +9,18 @@ load_dotenv()
 
 app = Flask(__name__)
 
+app.secret_key = os.environ['secret_key']
+
 SeaSurf(app)
-Talisman(app)
+
+csp = {
+    'default-src': [
+        '\'self\'',
+        'https://cdn.jsdelivr.net'
+    ]
+}
+
+Talisman(app, content_security_policy=csp)
 
 api_url = os.environ['api_url']
 
@@ -19,7 +29,7 @@ api_host = os.environ['api_host']
 
 
 def two_day_forecast(city: str):
-    
+
     querystring = {"q": city, "days": "2"}
 
     headers = {
@@ -42,4 +52,3 @@ def main():
         city = request.form.get('city')
         data = two_day_forecast(city)
         return render_template('index.html', data=data)
-
