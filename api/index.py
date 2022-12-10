@@ -1,3 +1,4 @@
+import os
 import requests
 from flask import Flask, render_template, request
 
@@ -5,13 +6,16 @@ app = Flask(__name__)
 
 
 def get_current_weather_report(city: str):
-    url = "https://weatherapi-com.p.rapidapi.com/current.json"
+    # url = "https://weatherapi-com.p.rapidapi.com/current.json"
+    url = os.environ['api_url']
+
+    api_key = os.environ['api_key']
+    api_host = os.environ['api_host']
 
     querystring = {"q": city}
-
     headers = {
-        "X-RapidAPI-Key": "5aebfe91bamsh1532d00e7634804p168ad6jsn9d73ee4e86f6",
-        "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com"
+        "X-RapidAPI-Key": api_key,
+        "X-RapidAPI-Host": api_host
     }
 
     response = requests.request(
@@ -22,6 +26,11 @@ def get_current_weather_report(city: str):
 
 def two_day_forecast(city: str):
     url = "https://weatherapi-com.p.rapidapi.com/forecast.json"
+
+    url = os.environ['api_url']
+
+    api_key = os.environ['api_key']
+    api_host = os.environ['api_host']
 
     querystring = {"q": city, "days": "2"}
 
