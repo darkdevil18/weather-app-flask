@@ -16,6 +16,7 @@ SeaSurf(app)
 csp = {
     'default-src': [
         '\'self\'',
+        '\'unsafe-inline\'',
         'https://cdn.jsdelivr.net'
     ]
 }
