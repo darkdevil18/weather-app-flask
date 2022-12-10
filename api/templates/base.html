@@ -31,6 +31,7 @@
     <section class="container-fluid mt-5 d-flex flex-column flex-md-row justify-content-center">
         <form action="/" method="post" class="d-flex flex-column flex-md-row gap-3">
             <input class="form-control-lg w-100" type="search" placeholder="City" aria-label="City" name="city" id="city">
+            <input type="hidden" name="_csrf_token" value="{{csrf_token()}}">
             <button class="btn btn-outline-primary" type="submit">Search</button>
           </form>
     </section>
